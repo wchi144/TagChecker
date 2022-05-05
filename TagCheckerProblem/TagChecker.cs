@@ -40,7 +40,7 @@ namespace TagCheckerProblem
                 else
                 {
                     isCorrectTag = false;
-                    expectedTag = openingTag == null ? "#" : $"</{openingTag}>";
+                    expectedTag = string.IsNullOrEmpty(openingTag) ? "#" : $"</{openingTag}>";
                     actualTag = string.IsNullOrEmpty(closingTag) ? "#" : $"</{closingTag}>";
                     break;
                 }
