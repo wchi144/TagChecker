@@ -15,9 +15,10 @@ namespace TagCheckerProblem
             var closingTagsRegex = new Regex(@"</([A-Z])>");
             var closingTags = closingTagsRegex.Matches(intput).ToList();
 
-            var expectedTag = "";
-            var actualTag = "";
+            string? expectedTag = null;
+            string? actualTag = null;
             var isCorrectTag = true;
+            
             int iterationCount;
 
             if (openingTags.Count >= closingTags.Count)
