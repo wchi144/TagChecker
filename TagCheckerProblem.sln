@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagCheckerProblem", "TagCheckerProblem\TagCheckerProblem.csproj", "{065285C9-61B7-45D3-99DF-8DA8B38084E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagCheckerProblemTests", "TagCheckerProblemTests\TagCheckerProblemTests.csproj", "{EE51D0D9-5B23-4652-B6FB-FD4272CBC525}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{065285C9-61B7-45D3-99DF-8DA8B38084E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065285C9-61B7-45D3-99DF-8DA8B38084E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065285C9-61B7-45D3-99DF-8DA8B38084E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065285C9-61B7-45D3-99DF-8DA8B38084E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE51D0D9-5B23-4652-B6FB-FD4272CBC525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE51D0D9-5B23-4652-B6FB-FD4272CBC525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE51D0D9-5B23-4652-B6FB-FD4272CBC525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE51D0D9-5B23-4652-B6FB-FD4272CBC525}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A95EA48-F3F0-4CC0-AD94-E8FCFC433C6A}
+	EndGlobalSection
+EndGlobal
