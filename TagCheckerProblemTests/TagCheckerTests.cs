@@ -5,8 +5,15 @@ namespace TagCheckerProblemTests
 {
     public class TagCheckerTests
     {
-        private readonly string CorrectTagSummary = "Correctly tagged paragraph";
-        //private readonly string IncorrectTagSummaryTemplate = "Expected {0} found {1}";
+        [Fact]
+        public void IsTagCorrect_GivenNoString_ExceptDefaultResult()
+        {
+            var sut = new TagChecker();
+            var result = sut.IsTagCorrect("");
+            var getSummary = sut.GetSummary(result);
+            Assert.True(result.IsCorrect);
+            Assert.Equal("Correctly tagged paragraph", getSummary);
+        }
 
         [Fact]
         public void IsTagCorrect_GivenCorrectTagging_ExpectCorrectlyTagged()
@@ -15,7 +22,7 @@ namespace TagCheckerProblemTests
             var result = sut.IsTagCorrect("The following text<C><B>is centred and in boldface</B></C>");
             var getSummary = sut.GetSummary(result);
             Assert.True(result.IsCorrect);
-            Assert.Equal(CorrectTagSummary, getSummary);
+            Assert.Equal("Correctly tagged paragraph", getSummary);
         }
 
         [Fact]
@@ -25,7 +32,7 @@ namespace TagCheckerProblemTests
             var result = sut.IsTagCorrect("<B>This <\\g>is <B>boldface</B> in <<*> a</B> <\\6> <<d>sentence");
             var getSummary = sut.GetSummary(result);
             Assert.True(result.IsCorrect);
-            Assert.Equal(CorrectTagSummary, getSummary);
+            Assert.Equal("Correctly tagged paragraph", getSummary);
         }
 
         [Fact]

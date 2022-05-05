@@ -21,35 +21,23 @@ namespace TagCheckerProblem
             var closingTagsRegex = new Regex(@"</([A-Z])>");
             var closingTags = closingTagsRegex.Matches(intput).ToList();
 
-            if(openingTags.Count == closingTags.Count || openingTags.Count > closingTags.Count)
-            {
-                return CheckTagOrder(openingTags, closingTags);
-            }
-
-            return CheckTagOrder(closingTags, openingTags);
-        }
-
-        public TagCheckerResult CheckTagOrder(IList<Match> tagsA, IList<Match> tagsB)
-        {
             var expectedTag = "";
             var actualTag = "";
             var isCorrectTag = true;
+            int iterationCount;
 
-            for (var i = 0; i < tagsA?.Count; i++)
+            if (openingTags.Count >= closingTags.Count)
             {
-                var openingTag = tagsA[i]?.Groups[1]?.Value;
-                string? closingTag;
+                iterationCount = openingTags.Count;
+            } else
+            {
+                iterationCount = closingTags.Count;
+            }
 
-                try
-                {
-                    //array.ElementAtOrDefault(index) != null;
-                    closingTag = tagsB[i]?.Groups[1]?.Value;
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    closingTag = null;
-                }
-                
+            for (var i = 0; i < iterationCount; i++)
+            {
+                var openingTag = openingTags.ElementAtOrDefault(i)?.Groups[1]?.Value;
+                var closingTag = closingTags.ElementAtOrDefault(i)?.Groups[1]?.Value;
 
                 if (openingTag == closingTag)
                 {
@@ -59,7 +47,7 @@ namespace TagCheckerProblem
                 {
                     isCorrectTag = false;
                     expectedTag = openingTag == null ? "#" : $"</{openingTag}>";
-                    actualTag = closingTag == null ? "#" : $"</{closingTag}>";
+                    actualTag = string.IsNullOrEmpty(closingTag) ? "#" : $"</{closingTag}>";
                     break;
                 }
             }
