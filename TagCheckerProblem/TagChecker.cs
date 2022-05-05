@@ -3,15 +3,9 @@ using TagCheckerProblem.Model;
 
 namespace TagCheckerProblem
 {
-    public interface ITagChecker {
-        public TagCheckerResult IsTagCorrect(string input);
-        public string GetSummary(TagCheckerResult result);
-    }
-
     public class TagChecker : ITagChecker
     {
         private readonly string CorrectTagSummary = "Correctly tagged paragraph";
-        //private readonly string IncorrectTagSummaryTemplate = "Expected {0} found {1}";
 
         public TagCheckerResult IsTagCorrect(string intput)
         {
