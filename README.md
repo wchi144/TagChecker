@@ -1,2 +1,2 @@
 # Tag Checker
-Logic to check if tag is correct in c#
+Logic to check if a string is correctly tagged HTML

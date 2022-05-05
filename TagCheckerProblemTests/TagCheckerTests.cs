@@ -6,7 +6,7 @@ namespace TagCheckerProblemTests
     public class TagCheckerTests
     {
         [Fact]
-        public void IsTagCorrect_GivenNoString_ExceptDefaultResult()
+        public void IsTagCorrect_GivenEmptyString_ExceptDefaultResult()
         {
             var sut = new TagChecker();
             var result = sut.IsTagCorrect("");
